@@ -1,46 +1,46 @@
 # 📈 Market Tracker Elite
 
-**Market Tracker Elite** è una piattaforma professionale all'avanguardia per il monitoraggio in tempo reale dei mercati finanziari. Costruita per offrire un'esperienza utente fluida e Premium, fonde un design *Glassmorphism* ultramoderno con performance ingegneristiche di altissimo livello.
+**Market Tracker Elite** is a cutting-edge professional platform for real-time monitoring of financial markets. Built to offer a seamless, premium user experience, it blends an ultra-modern *Glassmorphism* design with top-notch engineering performance.
 
 ---
 
-## 🔥 Caratteristiche Principali
+## 🔥 Key Features
 
-- **🚀 Performance Estreme**: Motore di rendering ottimizzato in **React** (tramite `useMemo` e `React.memo`) capace di gestire e renderizzare oltre **1500 strumenti finanziari** simultaneamente.
-- **⏱️ Dati in Tempo Reale**: Aggiornamenti WebSocket-style con tick rate personalizzabile a **3, 5 o 7 secondi**.
-- **📊 Mercati Globali Integrati**: Categorie multiple che includono **Cryptovalute, Azioni (AAPL, TSLA...), Forex, Materie Prime e Metalli Preziosi**.
-- **🔔 Sistema di Notifiche Smart**: Imposta alert di prezzo dinamici personalizzati. Ricevi popup Toast animati (e uno storico nell'app) non appena i tuoi asset incrociano le soglie desiderate.
-- **📱 Design UI/UX "Sleek Dark Mode"**: Un'interfaccia a schermo intero visivamente sbalorditiva, con sfocature dinamiche, ombre vettoriali e icone personalizzate in base alla categoria dell'asset.
-- **⚡ Applicazioni Desktop Native**: Porting completo con **Electron.js**. Disponibile sia per macOS (`.dmg`) che per Windows (`.exe`).
+- **🚀 Extreme Performance**: Optimized **React** rendering engine (via `useMemo` and `React.memo`) capable of managing and rendering over **1,500 financial instruments** simultaneously.
+- **⏱️ Real-Time Data**: WebSocket-style updates with customizable tick rate of **3, 5, or 7 seconds**.
+- **📊 Integrated Global Markets**: Multiple categories including **Cryptocurrencies, Stocks (AAPL, TSLA...), Forex, Commodities, and Precious Metals**.
+- **🔔 Smart Notification System**: Set custom dynamic price alerts. Receive animated Toast popups (and an in-app history) as soon as your assets cross your desired thresholds.
+- **📱 "Sleek Dark Mode" UI/UX Design**: A visually stunning full-screen interface with dynamic blurs, vector shadows, and custom icons based on the asset category.
+- **⚡ Native Desktop Applications**: Fully ported with **Electron.js**. Available for both macOS (`.dmg`) and Windows (`.exe`).
 
-## 🛠️ Stack Tecnologico
-- **Frontend**: React 19, Vite, Lucide-React per l'iconografia.
-- **Styling**: Vanilla CSS avanzato (Gradienti dinamici, Backdrop-filter, Animazioni CSS3).
+## 🛠️ Technology Stack
+- **Frontend**: React 19, Vite, Lucide-React for iconography.
+- **Styling**: Advanced vanilla CSS (Dynamic gradients, Backdrop filter, CSS3 animations).
 - **Desktop Packaging**: Electron, Electron-Builder.
-- **Architettura**: Hooks React custom (`useRealtimeData`), LocalStorage per persistenza e ottimizzazione del DOM Virtuale.
+- **Architecture**: Custom React Hooks (`useRealtimeData`), LocalStorage for persistence and Virtual DOM optimization.
 
-## 📥 Installazione e Sviluppo
+## 📥 Installation and Development
 
 ```bash
-# 1. Clona la repository
-git clone https://github.com/TUONOME/market-tracker.git
+# 1. Clone the repository
+git clone https://github.com/YOURNAME/market-tracker.git
 
-# 2. Entra nella cartella e installa le dipendenze
+# 2. Go to the folder and install the dependencies
 cd market-tracker
 npm install
 
-# 3. Avvia il server di sviluppo locale
+# 3. Start the local development server
 npm run dev
 ```
 
-### O crea le App Desktop
+### Or create the Desktop Apps
 ```bash
-# Per creare la versione per Mac (.dmg)
+# To create the Mac version (.dmg)
 npm run electron:build:mac
 
-# Per creare la versione per Windows (.exe)
+# To create the Windows version (.exe)
 npm run electron:build:win
 ```
 
 ---
-*Progettato, codificato e firmato da **Elia Gambalunga**.*
+*Designed, coded, and signed by **Elia Gambalunga**.
