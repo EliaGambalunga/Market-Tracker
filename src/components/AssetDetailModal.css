@@ -1,0 +1,437 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    background: var(--bg-card);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-title h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.symbol-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.header-price {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.header-price h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.change-badge {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.timeframe-selector {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.25rem;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.tf-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.tf-btn:hover {
+    color: var(--text-primary);
+}
+
+.tf-btn.active {
+    background: var(--glass-highlight);
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-chart-container {
+    height: 200px;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Making MiniChart fill the area */
+    display: flex;
+}
+
+.modal-chart-container svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-section h3,
+.buy-section h3,
+.stats-grid-section h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.description-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.buy-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.trade-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.trade-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Stats Grid Additions */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-lbl {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-val {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal Actions Row & Alerts */
+.modal-controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-fav-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    transition: all 0.2s;
+}
+
+.modal-fav-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-fav-btn.active {
+    color: #fbbf24;
+}
+
+.set-alert-toggle {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.set-alert-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.alert-form {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--glass-highlight);
+}
+
+.slide-down {
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-inputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.alert-select,
+.alert-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+}
+
+.alert-select option {
+    background: var(--bg-primary);
+}
+
+.price-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.currency-prefix {
+    position: absolute;
+    left: 12px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.alert-input {
+    width: 100%;
+    padding-left: 24px;
+}
+
+.alert-submit {
+    background: var(--accent-blue);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.alert-submit:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.modal-category-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 12px;
+    margin-right: -4px;
+}
+
+.alert-form-container {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid var(--glass-highlight);
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.alert-form-container .alert-form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 12px;
+    border-top: 1px dashed var(--glass-border);
+    padding-top: 12px;
+    border-radius: 0;
+}
+
+.active-alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.active-alert-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.del-alert-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--accent-red);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 4px;
+    display: flex;
+    transition: all 0.2s;
+}
+
+.del-alert-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
